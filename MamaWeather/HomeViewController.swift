@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        WeatherModel.perform()
         // Do any additional setup after loading the view.
     }
 

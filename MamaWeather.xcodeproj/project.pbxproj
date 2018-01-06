@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2D0D31E95BAACF264344A6A7 /* Pods_MamaWeatherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4DBD5AA0F449ED8E738F48 /* Pods_MamaWeatherUITests.framework */; };
 		2E21BB7411EBF3787FA711C2 /* Pods_MamaWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3313CADA64042B10E2C61092 /* Pods_MamaWeather.framework */; };
+		3940AC321FF7B86700703C44 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940AC311FF7B86700703C44 /* WeatherModel.swift */; };
+		3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940AC331FF7C59700703C44 /* SearchViewController.swift */; };
+		397511DF1FF7915E00412352 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397511DE1FF7915E00412352 /* WeatherView.swift */; };
+		397511E01FF7AE1600412352 /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E11FF7AE1600412352 /* SwiftSVG.framework */; };
+		397511E21FF7B6DD00412352 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E41FF7B6DD00412352 /* Alamofire.framework */; };
+		397511E31FF7B6DD00412352 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E51FF7B6DD00412352 /* SwiftyJSON.framework */; };
 		5EEFC7A7C40F53A93CFEC74D /* Pods_MamaWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7123F68B8640D85ECABCEED /* Pods_MamaWeatherTests.framework */; };
 		C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */; };
 		C5A0FEE31FCEF1160003AE40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A0FEE11FCEF1160003AE40 /* Main.storyboard */; };
@@ -37,13 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		106A9C5F8F39CD7FC54D108E /* Pods-MamaWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherUITests/Pods-MamaWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		13793A6FF7AFB957764399DA /* Pods-MamaWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		0D31AB42DA3121F6A69CB87C /* Pods-MamaWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherTests/Pods-MamaWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D41867BB0A50130FF63923D /* Pods-MamaWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.release.xcconfig"; sourceTree = "<group>"; };
+		2A4E945CAF47EC479CB555AF /* Pods-MamaWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherUITests/Pods-MamaWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3313CADA64042B10E2C61092 /* Pods_MamaWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MamaWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		447BAFCA13F632A1911C79D0 /* Pods-MamaWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherTests/Pods-MamaWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
-		62B9D09B105FEFAFEA799B21 /* Pods-MamaWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherTests/Pods-MamaWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
-		815DF81347E85E4548495E11 /* Pods-MamaWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.release.xcconfig"; sourceTree = "<group>"; };
-		86C4D1F928A076FA244F5F06 /* Pods-MamaWeatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherUITests/Pods-MamaWeatherUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3940AC311FF7B86700703C44 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		3940AC331FF7C59700703C44 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		397511DE1FF7915E00412352 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		397511E11FF7AE1600412352 /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		397511E41FF7B6DD00412352 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		397511E51FF7B6DD00412352 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B998F16B4CD825623DDD622 /* Pods-MamaWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherUITests/Pods-MamaWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		913D7E027E298EDB6F4EC167 /* Pods-MamaWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		C5A0FEDA1FCEF1160003AE40 /* MamaWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MamaWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5A0FEE21FCEF1160003AE40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 		C5B862531FCF04FF00BFDCE9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7123F68B8640D85ECABCEED /* Pods_MamaWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MamaWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4DBD5AA0F449ED8E738F48 /* Pods_MamaWeatherUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MamaWeatherUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB52A5072B436C6C2776B678 /* Pods-MamaWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherTests/Pods-MamaWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397511E21FF7B6DD00412352 /* Alamofire.framework in Frameworks */,
+				397511E31FF7B6DD00412352 /* SwiftyJSON.framework in Frameworks */,
+				397511E01FF7AE1600412352 /* SwiftSVG.framework in Frameworks */,
 				2E21BB7411EBF3787FA711C2 /* Pods_MamaWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,15 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D1C29018D03D1E949A4D183 /* Pods */ = {
+		678C0B93246E37F1FD7FAA1C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				13793A6FF7AFB957764399DA /* Pods-MamaWeather.debug.xcconfig */,
-				815DF81347E85E4548495E11 /* Pods-MamaWeather.release.xcconfig */,
-				62B9D09B105FEFAFEA799B21 /* Pods-MamaWeatherTests.debug.xcconfig */,
-				447BAFCA13F632A1911C79D0 /* Pods-MamaWeatherTests.release.xcconfig */,
-				106A9C5F8F39CD7FC54D108E /* Pods-MamaWeatherUITests.debug.xcconfig */,
-				86C4D1F928A076FA244F5F06 /* Pods-MamaWeatherUITests.release.xcconfig */,
+				913D7E027E298EDB6F4EC167 /* Pods-MamaWeather.debug.xcconfig */,
+				1D41867BB0A50130FF63923D /* Pods-MamaWeather.release.xcconfig */,
+				0D31AB42DA3121F6A69CB87C /* Pods-MamaWeatherTests.debug.xcconfig */,
+				FB52A5072B436C6C2776B678 /* Pods-MamaWeatherTests.release.xcconfig */,
+				5B998F16B4CD825623DDD622 /* Pods-MamaWeatherUITests.debug.xcconfig */,
+				2A4E945CAF47EC479CB555AF /* Pods-MamaWeatherUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -105,6 +120,9 @@
 		A26BD0987D264EA24B6BF588 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				397511E41FF7B6DD00412352 /* Alamofire.framework */,
+				397511E51FF7B6DD00412352 /* SwiftyJSON.framework */,
+				397511E11FF7AE1600412352 /* SwiftSVG.framework */,
 				3313CADA64042B10E2C61092 /* Pods_MamaWeather.framework */,
 				E7123F68B8640D85ECABCEED /* Pods_MamaWeatherTests.framework */,
 				FA4DBD5AA0F449ED8E738F48 /* Pods_MamaWeatherUITests.framework */,
@@ -119,8 +137,8 @@
 				C5A0FEF11FCEF1170003AE40 /* MamaWeatherTests */,
 				C5A0FEFC1FCEF1170003AE40 /* MamaWeatherUITests */,
 				C5A0FEDB1FCEF1160003AE40 /* Products */,
-				5D1C29018D03D1E949A4D183 /* Pods */,
 				A26BD0987D264EA24B6BF588 /* Frameworks */,
+				678C0B93246E37F1FD7FAA1C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +161,9 @@
 				C5A0FEE61FCEF1160003AE40 /* LaunchScreen.storyboard */,
 				C5A0FEE91FCEF1160003AE40 /* Info.plist */,
 				C5B862531FCF04FF00BFDCE9 /* HomeViewController.swift */,
+				397511DE1FF7915E00412352 /* WeatherView.swift */,
+				3940AC311FF7B86700703C44 /* WeatherModel.swift */,
+				3940AC331FF7C59700703C44 /* SearchViewController.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
@@ -392,9 +413,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSVG/SwiftSVG.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSVG.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -469,7 +497,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */,
+				397511DF1FF7915E00412352 /* WeatherView.swift in Sources */,
 				C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */,
+				3940AC321FF7B86700703C44 /* WeatherModel.swift in Sources */,
 				C5B862541FCF04FF00BFDCE9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,7 +665,7 @@
 		};
 		C5A0FF031FCEF1170003AE40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13793A6FF7AFB957764399DA /* Pods-MamaWeather.debug.xcconfig */;
+			baseConfigurationReference = 913D7E027E298EDB6F4EC167 /* Pods-MamaWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -649,7 +680,7 @@
 		};
 		C5A0FF041FCEF1170003AE40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 815DF81347E85E4548495E11 /* Pods-MamaWeather.release.xcconfig */;
+			baseConfigurationReference = 1D41867BB0A50130FF63923D /* Pods-MamaWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -664,7 +695,7 @@
 		};
 		C5A0FF061FCEF1170003AE40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62B9D09B105FEFAFEA799B21 /* Pods-MamaWeatherTests.debug.xcconfig */;
+			baseConfigurationReference = 0D31AB42DA3121F6A69CB87C /* Pods-MamaWeatherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -681,7 +712,7 @@
 		};
 		C5A0FF071FCEF1170003AE40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 447BAFCA13F632A1911C79D0 /* Pods-MamaWeatherTests.release.xcconfig */;
+			baseConfigurationReference = FB52A5072B436C6C2776B678 /* Pods-MamaWeatherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -698,7 +729,7 @@
 		};
 		C5A0FF091FCEF1170003AE40 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 106A9C5F8F39CD7FC54D108E /* Pods-MamaWeatherUITests.debug.xcconfig */;
+			baseConfigurationReference = 5B998F16B4CD825623DDD622 /* Pods-MamaWeatherUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -714,7 +745,7 @@
 		};
 		C5A0FF0A1FCEF1170003AE40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86C4D1F928A076FA244F5F06 /* Pods-MamaWeatherUITests.release.xcconfig */;
+			baseConfigurationReference = 2A4E945CAF47EC479CB555AF /* Pods-MamaWeatherUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
