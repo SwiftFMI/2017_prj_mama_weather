@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dib-7S-clQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,13 +8,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
         <scene sceneID="tTc-sr-qaS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="csZ-Jj-Pve" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dib-7S-clQ" customClass="SearchViewController" customModule="MamaWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QYZ-Hk-GHh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -58,8 +58,148 @@
                         <outlet property="searchBar" destination="PCV-nP-dWC" id="y79-fR-LKf"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csZ-Jj-Pve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-607.20000000000005" y="492.50374812593708"/>
+            <point key="canvasLocation" x="-5495" y="-531"/>
+        </scene>
+        <!--Date View Controller-->
+        <scene sceneID="Kaw-fD-6tG">
+            <objects>
+                <viewController id="PuL-0P-oXp" customClass="DateViewController" customModule="MamaWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bq-Uk-a9x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k9y-gG-4l4">
+                                <rect key="frame" x="16" y="28" width="320" height="562"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The chosen location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZc-8R-jQD">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="76"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="76" id="Th3-IJ-ybP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select start date for your trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH0-FF-efe">
+                                        <rect key="frame" x="0.0" y="84" width="220.5" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="eI9-e3-uTY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fa6-Hd-kmA">
+                                        <rect key="frame" x="0.0" y="130" width="320" height="162"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="162" id="j6X-sA-elr"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="536929400.535707">
+                                            <!--2018-01-06 11:03:20 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select end date for your trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzc-aZ-X8P">
+                                        <rect key="frame" x="0.0" y="300" width="214" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="Ihy-dU-CCD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="FRw-9S-59Y">
+                                        <rect key="frame" x="0.0" y="346" width="320" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="536929724.217291">
+                                            <!--2018-01-06 11:08:44 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k9y-gG-4l4" firstAttribute="top" secondItem="Dvc-qP-INC" secondAttribute="top" constant="8" id="mfo-MY-OdB"/>
+                            <constraint firstItem="k9y-gG-4l4" firstAttribute="leading" secondItem="7bq-Uk-a9x" secondAttribute="leadingMargin" id="wrL-e3-XL2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dvc-qP-INC"/>
+                    </view>
+                    <connections>
+                        <outlet property="destination" destination="CZc-8R-jQD" id="XSu-54-xdL"/>
+                        <outlet property="endDate" destination="FRw-9S-59Y" id="loa-jT-iPV"/>
+                        <outlet property="startDate" destination="Fa6-Hd-kmA" id="Afw-7S-HvR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vnw-Mn-2DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4698" y="-123"/>
+        </scene>
+        <!--Initial Setting View Controller-->
+        <scene sceneID="KnT-kT-Flf">
+            <objects>
+                <viewController id="bc5-Lo-h9p" customClass="InitialSettingViewController" customModule="MamaWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mlf-eg-qzU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ge1-WM-d56">
+                                <rect key="frame" x="50" y="136" width="272" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.45000000000000001" y="0.0" width="1" height="1"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lL-Lb-Dff">
+                                <rect key="frame" x="236" y="369" width="86" height="80"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="05h-1x-x0O"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eOA-H8-Fcj" appends="YES" id="Utz-mh-KlJ"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whq-bO-Kqg">
+                                <rect key="frame" x="50" y="369" width="86" height="80"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="bYC-ME-ciF"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wzO-PV-2zU" appends="YES" id="Zhj-u2-IfY"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Df-mJ-81p">
+                                <rect key="frame" x="50" y="204" width="272" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="pZM-Ko-RXy"/>
+                    </view>
+                    <connections>
+                        <outlet property="age" destination="5Df-mJ-81p" id="f3m-hZ-Eaa"/>
+                        <outlet property="name" destination="ge1-WM-d56" id="K8u-K5-YPb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajc-jl-Xnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wzO-PV-2zU" userLabel="Tap Gesture Recognizer-left button">
+                    <connections>
+                        <action selector="TapLeftButtonGesture:" destination="bc5-Lo-h9p" id="wmx-fJ-bnB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eOA-H8-Fcj" userLabel="Tap Gesture Recognizer-right button">
+                    <connections>
+                        <action selector="TapRightButtonGesture:" destination="bc5-Lo-h9p" id="FXw-Jl-oLw"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-5919.1999999999998" y="-1958.7706146926539"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="kMs-AI-faQ">
@@ -70,11 +210,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ovw-5B-0en" customClass="WeatherView" customModule="MamaWeather" customModuleProvider="target">
-                                <rect key="frame" x="16" y="20" width="343" height="271"/>
+                                <rect key="frame" x="43" y="20" width="289" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-Z0-53M">
-                                        <rect key="frame" x="139" y="9" width="64.5" height="261.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="cn7-Z0-53M">
+                                        <rect key="frame" x="112" y="10" width="64.5" height="181.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGI-QR-iS8">
@@ -84,13 +224,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUa-X7-MxZ">
-                                                <rect key="frame" x="0.0" y="120.5" width="64.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="80.5" width="64.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxR-SR-Fol">
-                                                <rect key="frame" x="22" y="241" width="20.5" height="20.5"/>
+                                                <rect key="frame" x="22" y="161" width="20.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -101,19 +241,31 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YGy-BD-0TI">
-                                <rect key="frame" x="16" y="336" width="343" height="251"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RvE-cc-ihG">
+                                <rect key="frame" x="11" y="265" width="352" height="359"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="w8Z-Pe-iSN">
+                                <rect key="frame" x="43" y="630" width="289" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.35465916450000001" green="0.35465916450000001" blue="0.35465916450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="dNh-U9-JUD"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMM-Jv-wP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.599999999999994" y="-60.719640179910051"/>
+            <point key="canvasLocation" x="-4660" y="-936"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="KKo-we-j4b">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="n67-b9-GGx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TL-Ws-wcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3674" y="-893"/>
         </scene>
     </scenes>
 </document>
