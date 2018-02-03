@@ -7,30 +7,46 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: UIViewController {
+    
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        WeatherModel.perform()
-        // Do any additional setup after loading the view.
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        checkLocationServicesAvailability()
+        
+        setupLocationManager()
+    }
+    
+    private func checkLocationServicesAvailability() {
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined: print("not determined. What to do?")
+        case .authorizedWhenInUse: print("authorised when in use. Continue")
+        case .denied: print("Not cool. Disallow location services. Save battery")
+        default: print("Not cool. Disallow location services")
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension HomeViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
     }
-    */
-
 }
