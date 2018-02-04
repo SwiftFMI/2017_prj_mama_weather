@@ -17,6 +17,8 @@
 		397511E21FF7B6DD00412352 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E41FF7B6DD00412352 /* Alamofire.framework */; };
 		397511E31FF7B6DD00412352 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E51FF7B6DD00412352 /* SwiftyJSON.framework */; };
 		3982549A200BA36E0000F6B0 /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */; };
+		39F329882025D0AC00625B44 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F329872025D0AC00625B44 /* UserModel.swift */; };
+		39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F329892027479100625B44 /* RequiredTextField.swift */; };
 		5EEFC7A7C40F53A93CFEC74D /* Pods_MamaWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7123F68B8640D85ECABCEED /* Pods_MamaWeatherTests.framework */; };
 		C5216DBC2000E523000075C6 /* CitySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216DBB2000E523000075C6 /* CitySearchCell.swift */; };
 		C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */; };
@@ -58,6 +60,8 @@
 		397511E41FF7B6DD00412352 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397511E51FF7B6DD00412352 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
+		39F329872025D0AC00625B44 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		39F329892027479100625B44 /* RequiredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredTextField.swift; sourceTree = "<group>"; };
 		5B998F16B4CD825623DDD622 /* Pods-MamaWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherUITests/Pods-MamaWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		913D7E027E298EDB6F4EC167 /* Pods-MamaWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		C5216DBB2000E523000075C6 /* CitySearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchCell.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			children = (
 				C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */,
 				C5A0FEE11FCEF1160003AE40 /* Main.storyboard */,
+				39F329872025D0AC00625B44 /* UserModel.swift */,
 				39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */,
 				3945EFBD2000E98A005B6B9F /* DateViewController.swift */,
 				C5A0FEE41FCEF1160003AE40 /* Assets.xcassets */,
@@ -173,6 +178,7 @@
 				3940AC311FF7B86700703C44 /* WeatherModel.swift */,
 				3940AC331FF7C59700703C44 /* SearchViewController.swift */,
 				C5216DBB2000E523000075C6 /* CitySearchCell.swift */,
+				39F329892027479100625B44 /* RequiredTextField.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
@@ -510,9 +516,11 @@
 				397511DF1FF7915E00412352 /* WeatherView.swift in Sources */,
 				C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */,
 				3940AC321FF7B86700703C44 /* WeatherModel.swift in Sources */,
+				39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */,
 				3945EFBE2000E98A005B6B9F /* DateViewController.swift in Sources */,
 				3982549A200BA36E0000F6B0 /* InitialSettingViewController.swift in Sources */,
 				C5216DBC2000E523000075C6 /* CitySearchCell.swift in Sources */,
+				39F329882025D0AC00625B44 /* UserModel.swift in Sources */,
 				C5B862541FCF04FF00BFDCE9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,6 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;
@@ -696,6 +705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;

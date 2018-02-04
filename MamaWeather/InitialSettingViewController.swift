@@ -9,14 +9,35 @@
 import UIKit
 
 class InitialSettingViewController: UIViewController {
-
-    @IBOutlet weak var name: UITextField!
-    @IBOutlet weak var age: UITextField!
     
-    @IBAction func TapLeftButtonGesture(_ sender: UITapGestureRecognizer) {
+    @IBOutlet weak var nameTextField: RequiredTextField!
+    @IBOutlet weak var ageTextField: RequiredTextField!
+    @IBAction func setName(_ sender: UITextField) {
+        if let userName = sender.text {
+            User.instance.name = userName
+        }
     }
     
-    @IBAction func TapRightButtonGesture(_ sender: UITapGestureRecognizer) {
+    @IBAction func genderButtonPressed(_ sender: UIButton) {
+        if let gender = sender.currentTitle {
+            switch(gender) {
+                case "male": User.instance.gender = .male
+                default: User.instance.gender = .female
+            }
+        }
     }
     
+    @IBAction func setAge(_ sender: UITextField) {
+        if let userAge = sender.text {
+            User.instance.age = Int(userAge) ?? 0
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier, identifier == "showHomeScreen",
+            nameTextField.isValid(for: ""),
+            ageTextField.isValid(for: ""){
+            segue.perform()
+        }
+    }
 }
