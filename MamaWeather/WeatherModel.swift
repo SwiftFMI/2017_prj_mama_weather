@@ -12,7 +12,9 @@ import SwiftyJSON
 
 class WeatherModel {
     
-    
+    var city: String?
+    var startDate: Date?
+    var endDate: Date?
     
     static func perform() {
         Alamofire.request("https://api.openweathermap.org/data/2.5/weather?id=727011&APPID=0609d3e39368852f624e4cc1aee10c19").responseJSON { response in
