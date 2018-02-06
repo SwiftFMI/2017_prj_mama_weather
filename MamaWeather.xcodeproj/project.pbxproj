@@ -17,6 +17,7 @@
 		C51E145C200BA3B200E79AFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51E145B200BA3B200E79AFD /* CoreLocation.framework */; };
 		C51E145E200BAB2C00E79AFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51E145D200BAB2C00E79AFD /* LocationManager.swift */; };
 		C5216DBC2000E523000075C6 /* CitySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216DBB2000E523000075C6 /* CitySearchCell.swift */; };
+		C550F3362028D9AB001549DE /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550F3352028D9AB001549DE /* Trie.swift */; };
 		C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */; };
 		C5A0FEE31FCEF1160003AE40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A0FEE11FCEF1160003AE40 /* Main.storyboard */; };
 		C5A0FEE51FCEF1160003AE40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A0FEE41FCEF1160003AE40 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		C51E145B200BA3B200E79AFD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C51E145D200BAB2C00E79AFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C5216DBB2000E523000075C6 /* CitySearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchCell.swift; sourceTree = "<group>"; };
+		C550F3352028D9AB001549DE /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		C5A0FEDA1FCEF1160003AE40 /* MamaWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MamaWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5A0FEE21FCEF1160003AE40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				3940AC331FF7C59700703C44 /* SearchViewController.swift */,
 				C5216DBB2000E523000075C6 /* CitySearchCell.swift */,
 				C51E145D200BAB2C00E79AFD /* LocationManager.swift */,
+				C550F3352028D9AB001549DE /* Trie.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
@@ -463,7 +466,7 @@
 		};
 		D64F0CF496904C91E6EED24F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
@@ -471,10 +474,9 @@
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		E6FF4DB95D7B2A9B71426B23 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -504,6 +506,7 @@
 				3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */,
 				C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */,
 				C51E145E200BAB2C00E79AFD /* LocationManager.swift in Sources */,
+				C550F3362028D9AB001549DE /* Trie.swift in Sources */,
 				C5216DBC2000E523000075C6 /* CitySearchCell.swift in Sources */,
 				C5B862541FCF04FF00BFDCE9 /* HomeViewController.swift in Sources */,
 			);
@@ -673,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;
@@ -688,6 +692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;

@@ -14,23 +14,23 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resultsTable: UITableView!
     
-    fileprivate var cities: JSON?
-    fileprivate var filteredCities: JSON?
+    private var filteredCities: [String] = []
+    private var trie = Trie()
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard cities != nil else {
-            return
-        }
-        
+        guard !filteredCities.isEmpty else { return }
+        reload(searchText: searchText)
+//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(SearchViewController.reload), object: nil)
+//        self.perform(#selector(SearchViewController.reload), with: searchText, afterDelay: 0.3)
+    }
+    
+    @objc func reload(searchText: String) {
         DispatchQueue.global().async { [weak self] in
-            if let cities = self?.cities! {
-                self?.filteredCities = JSON(cities.arrayValue.filter {
-                    $0["name"].stringValue.range(of: searchText) != nil
-                })
+            self?.filteredCities = self?.trie.starting(with: searchText) ?? []
+            DispatchQueue.main.async { [weak self] in
+                guard let this = self else { return }
+                this.resultsTable.reloadData()
             }
-//            DispatchQueue.main.async { [weak self] in
-//                self?.resultsTable.reloadData()
-//            } work it around!!!
         }
     }
     
@@ -42,36 +42,29 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let asset = NSDataAsset(name: "Cities", bundle: Bundle.main)
         if let data = asset?.data {
             if let jsonObj = try? JSON(data: data) {
-                cities = jsonObj
-                filteredCities = cities
+                for city in jsonObj.arrayValue {
+                    trie.insert(word: city["name"].stringValue)
+                }
+                filteredCities = trie.starting(with: "")
                 resultsTable.dataSource = self
-                //resultsTable.reloadData()
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
 extension SearchViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let city = filteredCities?[indexPath.row]
-        let cityName = city?["name"].stringValue
-        let countryCode = city?["country"].stringValue
+        let city = filteredCities[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "citySearchCell") as? CitySearchCell else {
             return UITableViewCell()
         }
         
-        cell.cityLabel.text = cityName ?? ""
-        cell.countryLabel.text = countryCode ?? ""
+        cell.cityLabel.text = city
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return filteredCities.count
     }
 }
