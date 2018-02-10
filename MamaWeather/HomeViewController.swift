@@ -11,7 +11,11 @@ import CoreLocation
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     let locationManager = CLLocationManager()
+    let req = Request()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,18 @@ class HomeViewController: UIViewController {
         checkLocationServicesAvailability()
         
         setupLocationManager()
+
+        req.cityWeather(city: "Sofia") { weather in
+            self.cityLabel.text = weather.city!
+            self.weatherLabel.text = weather.description!
+            self.temperatureLabel.text = String(weather.temperature!)
+        }
+
+        req.forecast(city: "Sofia") { weathers in
+            for forecast in weathers {
+                print(forecast.time, forecast.description)
+            }
+        }
     }
     
     private func checkLocationServicesAvailability() {

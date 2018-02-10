@@ -11,7 +11,6 @@
 		2E21BB7411EBF3787FA711C2 /* Pods_MamaWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3313CADA64042B10E2C61092 /* Pods_MamaWeather.framework */; };
 		3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940AC331FF7C59700703C44 /* SearchViewController.swift */; };
 		3945EFBE2000E98A005B6B9F /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945EFBD2000E98A005B6B9F /* DateViewController.swift */; };
-		397511DF1FF7915E00412352 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397511DE1FF7915E00412352 /* WeatherView.swift */; };
 		397511E01FF7AE1600412352 /* SwiftSVG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E11FF7AE1600412352 /* SwiftSVG.framework */; };
 		397511E21FF7B6DD00412352 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E41FF7B6DD00412352 /* Alamofire.framework */; };
 		397511E31FF7B6DD00412352 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E51FF7B6DD00412352 /* SwiftyJSON.framework */; };
@@ -19,6 +18,8 @@
 		39F329882025D0AC00625B44 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F329872025D0AC00625B44 /* UserModel.swift */; };
 		39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F329892027479100625B44 /* RequiredTextField.swift */; };
 		5EEFC7A7C40F53A93CFEC74D /* Pods_MamaWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7123F68B8640D85ECABCEED /* Pods_MamaWeatherTests.framework */; };
+		A16CE6A72025CD0500C080F2 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CE6A62025CD0500C080F2 /* RequestService.swift */; };
+		A1EF7F2F202F184D00F5881C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF7F2E202F184D00F5881C /* WeatherModel.swift */; };
 		C51E145C200BA3B200E79AFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51E145B200BA3B200E79AFD /* CoreLocation.framework */; };
 		C51E145E200BAB2C00E79AFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51E145D200BAB2C00E79AFD /* LocationManager.swift */; };
 		C5216DBC2000E523000075C6 /* CitySearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5216DBB2000E523000075C6 /* CitySearchCell.swift */; };
@@ -55,7 +56,6 @@
 		3313CADA64042B10E2C61092 /* Pods_MamaWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MamaWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3940AC331FF7C59700703C44 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3945EFBD2000E98A005B6B9F /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
-		397511DE1FF7915E00412352 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		397511E11FF7AE1600412352 /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397511E41FF7B6DD00412352 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397511E51FF7B6DD00412352 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +64,8 @@
 		39F329892027479100625B44 /* RequiredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredTextField.swift; sourceTree = "<group>"; };
 		5B998F16B4CD825623DDD622 /* Pods-MamaWeatherUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeatherUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeatherUITests/Pods-MamaWeatherUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		913D7E027E298EDB6F4EC167 /* Pods-MamaWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		A16CE6A62025CD0500C080F2 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		A1EF7F2E202F184D00F5881C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C51E145B200BA3B200E79AFD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C51E145D200BAB2C00E79AFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C5216DBB2000E523000075C6 /* CitySearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,8 @@
 				C5216DBB2000E523000075C6 /* CitySearchCell.swift */,
 				39F329892027479100625B44 /* RequiredTextField.swift */,
 				C51E145D200BAB2C00E79AFD /* LocationManager.swift */,
+				A16CE6A62025CD0500C080F2 /* RequestService.swift */,
+				A1EF7F2E202F184D00F5881C /* WeatherModel.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
@@ -516,8 +520,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */,
+				A16CE6A72025CD0500C080F2 /* RequestService.swift in Sources */,
 				C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */,
-				3940AC321FF7B86700703C44 /* WeatherModel.swift in Sources */,
 				39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */,
 				3945EFBE2000E98A005B6B9F /* DateViewController.swift in Sources */,
 				3982549A200BA36E0000F6B0 /* InitialSettingViewController.swift in Sources */,
@@ -525,6 +529,7 @@
 				C5216DBC2000E523000075C6 /* CitySearchCell.swift in Sources */,
 				39F329882025D0AC00625B44 /* UserModel.swift in Sources */,
 				C5B862541FCF04FF00BFDCE9 /* HomeViewController.swift in Sources */,
+				A1EF7F2F202F184D00F5881C /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +699,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -710,6 +716,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -726,6 +733,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -743,6 +751,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -759,6 +768,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -775,6 +785,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
