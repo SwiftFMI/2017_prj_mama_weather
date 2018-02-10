@@ -2,8 +2,8 @@
 //  WeatherModel.swift
 //  MamaWeather
 //
-//  Created by Maria Bozhkova on 12/30/17.
-//  Copyright © 2017 Boyan Vushkov. All rights reserved.
+//  Created by Nikki Gyurova on 10.02.18.
+//  Copyright © 2018 Boyan Vushkov. All rights reserved.
 //
 
 import Foundation
@@ -11,19 +11,21 @@ import Alamofire
 import SwiftyJSON
 
 class WeatherModel {
+    var city: String?
+    var description: String?
+    var temperature: Double?
+    var time: Date?
+
+    init(city: String, description: String, temperature: Double) {
+        self.city   = city
+        self.description = description
+        self.temperature  = temperature
+    }
     
-    
-    
-    static func perform() {
-        Alamofire.request("https://api.openweathermap.org/data/2.5/weather?id=727011&APPID=0609d3e39368852f624e4cc1aee10c19").responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                print("SUCCESS")
-                print(value)
-            case .failure(let error):
-                print("ERROR")
-                print(error)
-            }
-        }
+    init(city: String, description: String, temperature: Double, millis: Double) {
+        self.city   = city
+        self.description = description
+        self.temperature  = temperature
+        self.time = Date(timeIntervalSince1970: millis)
     }
 }

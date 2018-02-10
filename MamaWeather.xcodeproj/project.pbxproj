@@ -11,6 +11,11 @@
 		3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940AC331FF7C59700703C44 /* SearchViewController.swift */; };
 		397511E21FF7B6DD00412352 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E41FF7B6DD00412352 /* Alamofire.framework */; };
 		397511E31FF7B6DD00412352 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397511E51FF7B6DD00412352 /* SwiftyJSON.framework */; };
+		3982549A200BA36E0000F6B0 /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */; };
+		39F329882025D0AC00625B44 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F329872025D0AC00625B44 /* UserModel.swift */; };
+		39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F329892027479100625B44 /* RequiredTextField.swift */; };
+		A16CE6A72025CD0500C080F2 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16CE6A62025CD0500C080F2 /* RequestService.swift */; };
+		A1EF7F2F202F184D00F5881C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF7F2E202F184D00F5881C /* WeatherModel.swift */; };
 		C51E145C200BA3B200E79AFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51E145B200BA3B200E79AFD /* CoreLocation.framework */; };
 		C51E145E200BAB2C00E79AFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51E145D200BAB2C00E79AFD /* LocationManager.swift */; };
 		C550F3362028D9AB001549DE /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550F3352028D9AB001549DE /* Trie.swift */; };
@@ -48,7 +53,12 @@
 		397511E11FF7AE1600412352 /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397511E41FF7B6DD00412352 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		397511E51FF7B6DD00412352 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
+		39F329872025D0AC00625B44 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		39F329892027479100625B44 /* RequiredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredTextField.swift; sourceTree = "<group>"; };
 		913D7E027E298EDB6F4EC167 /* Pods-MamaWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MamaWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MamaWeather/Pods-MamaWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		A16CE6A62025CD0500C080F2 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		A1EF7F2E202F184D00F5881C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C51E145B200BA3B200E79AFD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C51E145D200BAB2C00E79AFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C5243DEF202F1A7600EFA2E0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,14 +163,19 @@
 			children = (
 				C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */,
 				C5A0FEE11FCEF1160003AE40 /* Main.storyboard */,
+				39F329872025D0AC00625B44 /* UserModel.swift */,
+				39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */,
 				C5A0FEE41FCEF1160003AE40 /* Assets.xcassets */,
 				C5A0FEE61FCEF1160003AE40 /* LaunchScreen.storyboard */,
 				C5A0FEE91FCEF1160003AE40 /* Info.plist */,
 				C5B862531FCF04FF00BFDCE9 /* HomeViewController.swift */,
 				3940AC331FF7C59700703C44 /* SearchViewController.swift */,
-				C51E145D200BAB2C00E79AFD /* LocationManager.swift */,
 				C550F3352028D9AB001549DE /* Trie.swift */,
 				C584C355202E4FBA0010DDAC /* Cities.swift */,
+				39F329892027479100625B44 /* RequiredTextField.swift */,
+				C51E145D200BAB2C00E79AFD /* LocationManager.swift */,
+				A16CE6A62025CD0500C080F2 /* RequestService.swift */,
+				A1EF7F2E202F184D00F5881C /* WeatherModel.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
@@ -390,11 +405,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */,
+				A16CE6A72025CD0500C080F2 /* RequestService.swift in Sources */,
 				C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */,
+				39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */,
+				3982549A200BA36E0000F6B0 /* InitialSettingViewController.swift in Sources */,
 				C51E145E200BAB2C00E79AFD /* LocationManager.swift in Sources */,
 				C550F3362028D9AB001549DE /* Trie.swift in Sources */,
 				C584C356202E4FBA0010DDAC /* Cities.swift in Sources */,
+				39F329882025D0AC00625B44 /* UserModel.swift in Sources */,
 				C5B862541FCF04FF00BFDCE9 /* HomeViewController.swift in Sources */,
+				A1EF7F2F202F184D00F5881C /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -580,6 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2L24TQ8W95;
 				INFOPLIST_FILE = MamaWeather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,6 +617,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -611,6 +634,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -626,6 +650,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -641,6 +666,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MamaWeatherUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asteasolutions.mamaweather.MamaWeatherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
