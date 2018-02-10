@@ -8,13 +8,15 @@
 
 import Foundation
 
-class TrieNode<T: Hashable> {
+class TrieNode<T: Hashable, D> {
     let value: T?
+    var associatedData: D?
     var children: [T: TrieNode] = [:]
     var isTerminating = false
     
-    init(value: T? = nil) {
+    init(value: T? = nil, data: D? = nil) {
         self.value = value
+        self.associatedData = data
     }
 
     func add(child: T) {
@@ -23,15 +25,15 @@ class TrieNode<T: Hashable> {
     }
 }
 
-class Trie {
-    typealias Node = TrieNode<Character>
+class Trie<D> {
+    typealias Node = TrieNode<Character, D>
     let root: Node
     
     init() {
         root = Node()
     }
     
-    func insert(word: String) {
+    func insert(word: String, associatedData: D) {
         guard !word.isEmpty else { return }
         
         var currentNode = root
@@ -45,6 +47,7 @@ class Trie {
             }
         }
         currentNode.isTerminating = true
+        currentNode.associatedData = associatedData
     }
     
     func contains(word: String) -> Bool {
@@ -89,6 +92,10 @@ class Trie {
             currentNode = childNode
         }
         return currentNode
+    }
+    
+    func data(`for` word: String) -> D? {
+        return findLastNode(of: word)?.associatedData
     }
     
     func starting(with prefix: String) -> [String] {
