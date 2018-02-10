@@ -20,16 +20,23 @@ class SearchViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let id = segue.identifier, id == "cellClicked", let destination = segue.destination as? SearchParametersViewController, let indexPath = sender as? IndexPath {
-            destination.selectedCity = Cities.list.data(at: indexPath.row)
+        if let id = segue.identifier, id == "cellClicked", let indexPath = sender as? IndexPath {
+            // destination.selectedCity = Cities.list.data(at: indexPath.row)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Cities.list.load(then: { [weak self] in
-            self?.resultsTable.reloadData()
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { timer in
+            if !Cities.list.isEmpty {
+                timer.invalidate()
+                Cities.list.search(for: "", then:  { [weak self] in
+                    self?.resultsTable.reloadData()
+                })
+            }
         })
+        
+        searchBar.becomeFirstResponder()
 
         searchBar.delegate = self
         resultsTable.dataSource = self

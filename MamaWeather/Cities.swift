@@ -23,7 +23,7 @@ class Cities {
     public static let list = Cities()
     private init() {}
     
-    func load(then callback: @escaping () -> Void) {
+    func load() {
         DispatchQueue.global().async { [weak self] in
             let asset = NSDataAsset(name: "Cities", bundle: Bundle.main)
             if let data = asset?.data {
@@ -34,9 +34,6 @@ class Cities {
                     }
                     self?.cities = self?.trie.starting(with: "") ?? []
                 }
-            }
-            DispatchQueue.main.async {
-                callback()
             }
         }
     }
