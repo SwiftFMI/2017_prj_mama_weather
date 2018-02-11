@@ -37,7 +37,7 @@ class Request {
             }
         }
     }
-    
+
     func cityWeather(at location: CLLocationCoordinate2D, result: @escaping (WeatherModel) -> ()) {
         let lat = location.latitude
         let lon = location.longitude
@@ -52,8 +52,8 @@ class Request {
         }
     }
     
-    func forecast(city: String, result: @escaping (([WeatherModel]) -> ())) {
-        Alamofire.request("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + key + "&units=metric").responseJSON { response in
+    func forecast(id: Int, result: @escaping (([WeatherModel]) -> ())) {
+        Alamofire.request("https://api.openweathermap.org/data/2.5/forecast?id=\(id)&appid=" + key + "&units=metric").responseJSON { response in
             if let json = response.result.value {
                 var w = [WeatherModel]()
 
@@ -69,9 +69,12 @@ class Request {
                     let first = weather.first as! [String: Any]
                     let desc = first["description"] as! String
                     
+                    let city = dictionary["city"] as! [String: Any]
+                    let name = city["name"] as! String
+                    
                     let time = timeInterval["dt"] as! Double
                     
-                    w.append(WeatherModel(city: city, description: desc, temperature: temp, millis: time))
+                    w.append(WeatherModel(city: name, description: desc, temperature: temp, millis: time))
                 }
                 
                 result(w)
