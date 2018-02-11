@@ -18,6 +18,7 @@
 		A1EF7F2F202F184D00F5881C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF7F2E202F184D00F5881C /* WeatherModel.swift */; };
 		C51E145C200BA3B200E79AFD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C51E145B200BA3B200E79AFD /* CoreLocation.framework */; };
 		C51E145E200BAB2C00E79AFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51E145D200BAB2C00E79AFD /* LocationManager.swift */; };
+		C5443856202F65AA009AEA80 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5443855202F65AA009AEA80 /* NavigationController.swift */; };
 		C550F3362028D9AB001549DE /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550F3352028D9AB001549DE /* Trie.swift */; };
 		C584C356202E4FBA0010DDAC /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C584C355202E4FBA0010DDAC /* Cities.swift */; };
 		C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		C51E145D200BAB2C00E79AFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C5243DEF202F1A7600EFA2E0 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5243DF0202F1A7600EFA2E0 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5443855202F65AA009AEA80 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		C550F3352028D9AB001549DE /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		C584C355202E4FBA0010DDAC /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		C5A0FEDA1FCEF1160003AE40 /* MamaWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MamaWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				C51E145D200BAB2C00E79AFD /* LocationManager.swift */,
 				A16CE6A62025CD0500C080F2 /* RequestService.swift */,
 				A1EF7F2E202F184D00F5881C /* WeatherModel.swift */,
+				C5443855202F65AA009AEA80 /* NavigationController.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3940AC341FF7C59700703C44 /* SearchViewController.swift in Sources */,
+				C5443856202F65AA009AEA80 /* NavigationController.swift in Sources */,
 				A16CE6A72025CD0500C080F2 /* RequestService.swift in Sources */,
 				C5A0FEDE1FCEF1160003AE40 /* AppDelegate.swift in Sources */,
 				39F3298A2027479100625B44 /* RequiredTextField.swift in Sources */,
