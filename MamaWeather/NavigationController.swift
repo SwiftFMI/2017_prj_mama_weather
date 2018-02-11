@@ -17,7 +17,10 @@ class NavigationController: UIPageViewController {
     }
     
     func goHome(with city: City) {
-        if let homeViewController = orderedViewControllers.dropFirst().first as? HomeViewController {
+        if let homeViewController = orderedViewControllers.dropFirst().first as? HomeViewController,
+            let forecastViewController = orderedViewControllers.last as? ForecastViewController {
+
+            forecastViewController.setSelectedCity(city)
             homeViewController.setSelectedCity(city)
             setViewControllers([homeViewController],
                                direction: .forward,
@@ -33,7 +36,8 @@ class NavigationController: UIPageViewController {
         
         orderedViewControllers = [
             instantiateViewController(named: "SearchViewController"),
-            instantiateViewController(named: "HomeViewController")
+            instantiateViewController(named: "HomeViewController"),
+            instantiateViewController(named: "ForecastViewController")
         ]
         
         if let firstViewController = orderedViewControllers.dropFirst().first {
