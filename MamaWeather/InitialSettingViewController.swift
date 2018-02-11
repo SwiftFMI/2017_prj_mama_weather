@@ -10,8 +10,8 @@ import UIKit
 
 class InitialSettingViewController: UIViewController {
     
-    @IBOutlet weak var nameTextField: RequiredTextField!
-    @IBOutlet weak var ageTextField: RequiredTextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var ageTextField: UITextField!
     @IBAction func setName(_ sender: UITextField) {
         if let userName = sender.text {
             User.instance.name = userName
@@ -34,9 +34,7 @@ class InitialSettingViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier, identifier == "showHomeScreen",
-            nameTextField.isValid(for: ""),
-            ageTextField.isValid(for: ""){
+        if let identifier = segue.identifier, identifier == "showHomeScreen" {
             segue.perform()
         }
     }
