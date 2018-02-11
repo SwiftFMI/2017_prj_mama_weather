@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TrieNode<T: Hashable, D> {
+class TrieNode<T: Hashable & Codable, D: Codable> : Codable {
     let value: T?
     var associatedData: D?
     var children: [T: TrieNode] = [:]
@@ -25,8 +25,8 @@ class TrieNode<T: Hashable, D> {
     }
 }
 
-class Trie<D> {
-    typealias Node = TrieNode<Character, D>
+class Trie<D: Codable> : Codable {
+    typealias Node = TrieNode<String, D>
     let root: Node
     
     init() {
@@ -39,11 +39,12 @@ class Trie<D> {
         var currentNode = root
         
         for character in Array(word) {
-            if let child = currentNode.children[character] {
+            let char = String(character)
+            if let child = currentNode.children[char] {
                 currentNode = child
             } else {
-                currentNode.add(child: character)
-                currentNode = currentNode.children[character]!
+                currentNode.add(child: char)
+                currentNode = currentNode.children[char]!
             }
         }
         currentNode.isTerminating = true
@@ -56,7 +57,8 @@ class Trie<D> {
         var currentNode = root
         
         for character in Array(word) {
-            guard let child = currentNode.children[character] else {
+            let char = String(character)
+            guard let child = currentNode.children[char] else {
                 return false
             }
             currentNode = child
@@ -86,7 +88,8 @@ class Trie<D> {
     func findLastNode(of word: String) -> Node? {
         var currentNode = root
         for character in Array(word) {
-            guard let childNode = currentNode.children[character] else {
+            let char = String(character)
+            guard let childNode = currentNode.children[char] else {
                 return nil
             }
             currentNode = childNode
