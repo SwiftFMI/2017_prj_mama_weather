@@ -16,6 +16,21 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     let locationManager = CLLocationManager()
     let req = Request()
+    
+    private var cityId: Int?
+    
+    func setSelectedCity(_ city: City) {
+        cityId = city.id
+        getWeather(for: cityId ?? 519188) // ???
+    }
+    
+    func getWeather(`for` cityId: Int) {
+        req.cityWeather(id: cityId) { weather in
+            self.cityLabel.text = weather.city!
+            self.weatherLabel.text = weather.description!
+            self.temperatureLabel.text = String(weather.temperature!)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +41,7 @@ class HomeViewController: UIViewController {
         
         setupLocationManager()
 
-        req.cityWeather(city: "Sofia") { weather in
-            self.cityLabel.text = weather.city!
-            self.weatherLabel.text = weather.description!
-            self.temperatureLabel.text = String(weather.temperature!)
-        }
-
-        req.forecast(city: "Sofia") { weathers in
-            for forecast in weathers {
-                print(forecast.time, forecast.description)
-            }
-        }
+        getWeather(for: cityId ?? 519188) // ???
     }
     
     private func checkLocationServicesAvailability() {

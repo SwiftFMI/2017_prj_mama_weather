@@ -15,6 +15,17 @@ class NavigationController: UIPageViewController {
     private func instantiateViewController(named identifier: String) -> UIViewController {
         return self.storyboard?.instantiateViewController(withIdentifier: identifier) ?? UIViewController()
     }
+    
+    func goHome(with city: City) {
+        if let homeViewController = orderedViewControllers.dropFirst().first as? HomeViewController {
+            homeViewController.setSelectedCity(city)
+            setViewControllers([homeViewController],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

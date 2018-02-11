@@ -12,8 +12,9 @@ import Alamofire
 let key = "49cfa4744a39729412b528fbd633a3b6"
 
 class Request {
-    func cityWeather(city: String, result: @escaping ((WeatherModel) -> ())) {
-        Alamofire.request("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key + "&units=metric").responseJSON { response in
+    func cityWeather(id: Int, result: @escaping ((WeatherModel) -> ())) {
+        Alamofire.request("https://api.openweathermap.org/data/2.5/weather?id=\(id)&appid=\(key)&units=metric")
+            .responseJSON { response in
             if let json = response.result.value {
                 // Internal screaming starts here
                 // AAAAAAAAAAAAAAAA
@@ -25,8 +26,9 @@ class Request {
                 let weather = dictionary["weather"] as! [Any]
                 let first = weather.first as! [String: Any]
                 let desc = first["description"] as! String
+                let name = dictionary["name"] as! String
                 
-                let w = WeatherModel(city: city, description: desc, temperature: temp)
+                let w = WeatherModel(city: name, description: desc, temperature: temp)
                 result(w)
             }
         }

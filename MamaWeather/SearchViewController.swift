@@ -19,11 +19,12 @@ class SearchViewController: UIViewController {
         })
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let id = segue.identifier, id == "cellClicked", let indexPath = sender as? IndexPath {
-            // destination.selectedCity = Cities.list.data(at: indexPath.row)
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let id = segue.identifier, id == "cellClicked", let indexPath = sender as? IndexPath,
+//            let destination = segue.destination as? HomeViewController {
+//             destination.selectedCity = Cities.list.data(at: indexPath.row)
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,11 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "cellClicked", sender: indexPath)
+        if let navigationController = self.parent as? NavigationController {
+            if let city = Cities.list.data(at: indexPath.row) {
+                navigationController.goHome(with: city)
+            }
+        }
     }
 }
 
