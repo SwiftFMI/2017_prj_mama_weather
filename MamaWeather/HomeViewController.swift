@@ -14,54 +14,43 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
-    let locationManager = CLLocationManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Location.current.locationDidChange = { [weak self] in
+            if let currentLocation = Location.current.location {
+                self?.location = currentLocation
+            }
+        }
+    }
+
     let req = Request()
     
-    private var cityId: Int?
-    
-    func setSelectedCity(_ city: City) {
-        cityId = city.id
-        getWeather(for: cityId ?? 519188) // ???
+    var cityId: Int? {
+        didSet {
+            getWeather(for: cityId ?? (Location.current.cityId ?? 519188))
+        }
     }
     
     func getWeather(`for` cityId: Int) {
-        req.cityWeather(id: cityId) { weather in
-            self.cityLabel.text = weather.city!
-            self.weatherLabel.text = weather.description!
-            self.temperatureLabel.text = String(weather.temperature!)
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        checkLocationServicesAvailability()
-        
-        setupLocationManager()
-
-        getWeather(for: cityId ?? 519188) // ???
+        req.cityWeather(id: cityId, result: updateUI)
     }
     
-    private func checkLocationServicesAvailability() {
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined: print("not determined. What to do?")
-        case .authorizedWhenInUse: print("authorised when in use. Continue")
-        case .denied: print("Not cool. Disallow location services. Save battery")
-        default: print("Not cool. Disallow location services")
+    func getWeather(at location: CLLocationCoordinate2D) {
+        req.cityWeather(at: location, result: updateUI)
+    }
+    
+    private var location: CLLocationCoordinate2D? {
+        didSet {
+            getWeather(at: location ?? CLLocationCoordinate2D())
         }
     }
     
-    private func setupLocationManager() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-        
+    private func updateUI(_ weather: WeatherModel) {
+        self.cityLabel.text = weather.city!
+        self.weatherLabel.text = weather.description!
+        self.temperatureLabel.text = String(weather.temperature!)
     }
 }
 
-extension HomeViewController : CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    }
-}
+

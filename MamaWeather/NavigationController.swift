@@ -18,7 +18,7 @@ class NavigationController: UIPageViewController {
     
     func goHome(with city: City) {
         if let homeViewController = orderedViewControllers.dropFirst().first as? HomeViewController {
-            homeViewController.setSelectedCity(city)
+            homeViewController.cityId = city.id
             setViewControllers([homeViewController],
                                direction: .forward,
                                animated: true,

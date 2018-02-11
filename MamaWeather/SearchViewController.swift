@@ -19,13 +19,6 @@ class SearchViewController: UIViewController {
         })
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let id = segue.identifier, id == "cellClicked", let indexPath = sender as? IndexPath,
-//            let destination = segue.destination as? HomeViewController {
-//             destination.selectedCity = Cities.list.data(at: indexPath.row)
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { timer in
