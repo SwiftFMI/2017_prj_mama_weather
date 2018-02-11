@@ -144,6 +144,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C5747A8E203104F8006D8E4D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				39F329872025D0AC00625B44 /* UserModel.swift */,
+				C550F3352028D9AB001549DE /* Trie.swift */,
+				C584C355202E4FBA0010DDAC /* Cities.swift */,
+				A16CE6A62025CD0500C080F2 /* RequestService.swift */,
+				A1EF7F2E202F184D00F5881C /* WeatherModel.swift */,
+				C54438572030932D009AEA80 /* Location.swift */,
+				C5747A8A2030EBD6006D8E4D /* Store.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		C5747A902031051F006D8E4D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C5A0FEE11FCEF1160003AE40 /* Main.storyboard */,
+				C5A0FEE61FCEF1160003AE40 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C5747A9120310533006D8E4D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C5A0FEE41FCEF1160003AE40 /* Assets.xcassets */,
+				C5A0FEE91FCEF1160003AE40 /* Info.plist */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		C5A0FED11FCEF1160003AE40 = {
 			isa = PBXGroup;
 			children = (
@@ -169,23 +201,15 @@
 		C5A0FEDC1FCEF1160003AE40 /* MamaWeather */ = {
 			isa = PBXGroup;
 			children = (
+				C5747A9120310533006D8E4D /* Assets */,
+				C5747A902031051F006D8E4D /* Storyboards */,
+				C5747A8E203104F8006D8E4D /* Services */,
 				C5A0FEDD1FCEF1160003AE40 /* AppDelegate.swift */,
-				C5A0FEE11FCEF1160003AE40 /* Main.storyboard */,
-				39F329872025D0AC00625B44 /* UserModel.swift */,
 				39825499200BA36E0000F6B0 /* InitialSettingViewController.swift */,
-				C5A0FEE41FCEF1160003AE40 /* Assets.xcassets */,
-				C5A0FEE61FCEF1160003AE40 /* LaunchScreen.storyboard */,
-				C5A0FEE91FCEF1160003AE40 /* Info.plist */,
 				C5B862531FCF04FF00BFDCE9 /* HomeViewController.swift */,
 				3940AC331FF7C59700703C44 /* SearchViewController.swift */,
-				C550F3352028D9AB001549DE /* Trie.swift */,
-				C584C355202E4FBA0010DDAC /* Cities.swift */,
-				A16CE6A62025CD0500C080F2 /* RequestService.swift */,
-				A1EF7F2E202F184D00F5881C /* WeatherModel.swift */,
 				C5443855202F65AA009AEA80 /* NavigationController.swift */,
-				C54438572030932D009AEA80 /* Location.swift */,
 				A174AE29203093190090F6EB /* ForecastViewController.swift */,
-				C5747A8A2030EBD6006D8E4D /* Store.swift */,
 			);
 			path = MamaWeather;
 			sourceTree = "<group>";
