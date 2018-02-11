@@ -18,13 +18,13 @@ class InitialSettingViewController: UIViewController {
         }
     }
     
-    @IBAction func genderButtonPressed(_ sender: UIButton) {
-        if let gender = sender.currentTitle {
-            switch(gender) {
-                case "male": User.instance.gender = .male
-                default: User.instance.gender = .female
-            }
-        }
+   
+    @IBAction func maleButtonPressed(_ sender: UITapGestureRecognizer) {
+        User.instance.gender = .male
+    }
+    
+    @IBAction func femaleButtonPressed(_ sender: UITapGestureRecognizer) {
+        User.instance.gender = .female
     }
     
     @IBAction func setAge(_ sender: UITextField) {
@@ -39,5 +39,25 @@ class InitialSettingViewController: UIViewController {
             ageTextField.isValid(for: ""){
             segue.perform()
         }
+    }
+    
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(InitialSettingViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.hideKeyboard()
     }
 }
