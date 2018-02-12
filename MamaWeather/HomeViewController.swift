@@ -42,7 +42,9 @@ class HomeViewController: UIViewController {
     
     private var location: CLLocationCoordinate2D? {
         didSet {
+            guard cityId == nil else { return }
             getWeather(at: location ?? CLLocationCoordinate2D())
+            Location.current.stopMonitoring()
         }
     }
     

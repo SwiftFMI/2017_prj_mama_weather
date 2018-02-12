@@ -17,6 +17,10 @@ class Location: NSObject {
     public static var current = Location()
     var locationDidChange: (() -> ())?
     
+    func stopMonitoring() {
+        locationManager.stopUpdatingLocation()
+    }
+
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocationCoordinate2D? {
         didSet {
@@ -47,7 +51,7 @@ class Location: NSObject {
     }
     
     private func setupLocationManager() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
     }
