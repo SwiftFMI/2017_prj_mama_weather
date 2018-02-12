@@ -15,6 +15,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
+    @IBAction func useCurrentLocation(_ sender: UIButton) {
+        Location.current.startMonitoring()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Location.current.locationDidChange = { [weak self] in
@@ -42,7 +46,6 @@ class HomeViewController: UIViewController {
     
     private var location: CLLocationCoordinate2D? {
         didSet {
-            guard cityId == nil else { return }
             getWeather(at: location ?? CLLocationCoordinate2D())
             Location.current.stopMonitoring()
         }

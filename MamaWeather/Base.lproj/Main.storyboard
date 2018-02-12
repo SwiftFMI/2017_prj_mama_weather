@@ -239,6 +239,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nII-A3-Mwd">
+                                <rect key="frame" x="220" y="617" width="139" height="30"/>
+                                <state key="normal" title="Use current location"/>
+                                <connections>
+                                    <action selector="useCurrentLocation:" destination="8go-6k-1yd" eventType="touchUpInside" id="jBm-Wv-8YK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -248,6 +255,8 @@
                             <constraint firstItem="tUa-X7-MxZ" firstAttribute="centerY" secondItem="tka-4Q-Wzh" secondAttribute="centerY" id="F29-8H-aoD"/>
                             <constraint firstItem="vxR-SR-Fol" firstAttribute="top" secondItem="tUa-X7-MxZ" secondAttribute="bottom" constant="60" id="GEl-MN-75S"/>
                             <constraint firstItem="qGI-QR-iS8" firstAttribute="centerX" secondItem="tUa-X7-MxZ" secondAttribute="centerX" id="QU3-Zo-8dT"/>
+                            <constraint firstItem="nII-A3-Mwd" firstAttribute="trailing" secondItem="tka-4Q-Wzh" secondAttribute="trailingMargin" id="d7L-NC-kQ9"/>
+                            <constraint firstAttribute="bottom" secondItem="nII-A3-Mwd" secondAttribute="bottom" constant="20" symbolic="YES" id="x6R-RZ-r7b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dNh-U9-JUD"/>
                     </view>

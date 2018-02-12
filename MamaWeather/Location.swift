@@ -20,6 +20,10 @@ class Location: NSObject {
     func stopMonitoring() {
         locationManager.stopUpdatingLocation()
     }
+    
+    func startMonitoring() {
+        setupLocationManager()
+    }
 
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocationCoordinate2D? {
