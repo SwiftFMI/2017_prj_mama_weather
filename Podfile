@@ -8,4 +8,5 @@ target 'MamaWeather' do
   # Pods for MamaWeather
   pod 'Alamofire', '~> 4.6'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Cache', '~> 4.1'
 end
