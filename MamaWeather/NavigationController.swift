@@ -11,6 +11,7 @@ import UIKit
 class NavigationController: UIPageViewController {
     
     private var orderedViewControllers: [UIViewController] = []
+    var pageControl = UIPageControl()
     
     private func instantiateViewController(named identifier: String) -> UIViewController {
         return self.storyboard?.instantiateViewController(withIdentifier: identifier) ?? UIViewController()
@@ -28,16 +29,28 @@ class NavigationController: UIPageViewController {
         }
         
     }
+    private func configurePageControl() {
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
+        pageControl.numberOfPages = orderedViewControllers.count
+        pageControl.currentPage = 0
+        pageControl.tintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.white
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        view.addSubview(pageControl)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
-        
+
         orderedViewControllers = [
             instantiateViewController(named: "SearchViewController"),
             instantiateViewController(named: "HomeViewController"),
             instantiateViewController(named: "ForecastViewController")
         ]
+        
+        delegate = self
+        configurePageControl()
         
         if let firstViewController = orderedViewControllers.dropFirst().first {
             setViewControllers([firstViewController],
@@ -46,6 +59,10 @@ class NavigationController: UIPageViewController {
                completion: nil)
         }
     }
+}
+
+extension NavigationController : UIPageViewControllerDelegate {
+    
 }
 
 extension NavigationController : UIPageViewControllerDataSource {
